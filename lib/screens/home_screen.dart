@@ -12,17 +12,17 @@ class HomeScreen extends StatelessWidget {
           elevation: 0,
       }
       body: ListView.separeted(
-        itemBuilder: (context, index) => ListTittle(
+        itemBuilder: (context, i) => ListTittle(
           title: Text(),
-          leading: Icon(Icons.access_time_outlined),
-          title: const Text(),
+          leading: Icon(menuOptions[i].icon),
+          title: const Text(menuOptions[i].name),
           onTap: () {
             final route = MaterialPageRoute(builder: (context) => ListviewScreen());
-            Navigator.push(context, route);
+            Navigator.push(context,menuOptions[i].route);
           },
         )
         separatorBuilder: (_,_) => const Builder(),
-        itemCount: 100  
+        itemCount: AppRoutes.menuOptions.length
       )
     );
   }
