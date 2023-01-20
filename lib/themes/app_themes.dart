@@ -13,6 +13,19 @@ static final ThemeData lightTheme = ThemeData.ThemeData.dark().copyWith(
         textButtonTheme: textButtonThemeData(
           style: TextButton.styleFrom(primary: Colors.indigo)
         )
+
+        floatingActionButtomTheme: const  floatingActionButtomTheme(
+          backgroundColor: primary,
+          elevation: 0,
+        ),
+
+        elevatedButtomTheme: elevatedButtomThemeData(
+              style: ElevatedButtom.styleForm(
+              primary: Color.indigo,
+              shape: const StadiumBorder  (),
+              elevation: 0
+            ),
+        )
       );
 
 
