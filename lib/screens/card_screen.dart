@@ -13,18 +13,12 @@ class CardScreen extends StatelessWidget {
       body: ListView( 
           padding: const EdgeInsets.symetric(horizontal: 20, vertical: 30),
           children: const [
-            Card(
-              child: Colum (
-                children: const [
-                  ListTile(
-                    leading: Icon(Icons.photo_album_outlined, color: AppTheme.primary),
-                    title: Text('Soy un titulo'),
-                    subtitle: Text('Soy un subtitulo'),
-                  )
-                ],
-              )
-            )
-
+           CustomCardType1(),
+           SizedBox(height: 10),
+           CustomCardType1(name: 'Un hermoso paisaje', imageUrl: 'https://www.noegasystems.com/wp-content/uploads/metodo-fifo.jpg'),
+           CustomCardType2(),
+           SizedBox(height: 10),
+            CustomCardType2(imageUrl: 'https://www.noegasystems.com/wp-content/uploads/metodo-fifo.jpg'),
           ],
       )
     );
