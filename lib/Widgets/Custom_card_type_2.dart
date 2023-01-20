@@ -1,7 +1,9 @@
 class CustomCardType2 extends StatelesWidget {
-  const CustomCardType2({
-    key? key,
-  }): super (key: key);
+
+  final String imageUrl;
+  final String name;
+
+  const CustomCardType2({  key? key, required  this.imageUrl, this.name}): super (key: key);
 
   Widget build (BuildContext context){
     return Card(
@@ -11,21 +13,22 @@ class CustomCardType2 extends StatelesWidget {
       )
       elevation: 30,
       Child: Column(
-        children: const [
+        children:  [
           FadeInImage(
-            image: const NetworkImage('https://www.noegasystems.com/wp-content/uploads/metodo-fifo.jpg')
+            image: NetworkImage(imageUrl),
             placeholder: AssetImage('assets/jar-loading.git'),
             width: double.infinity,
             height: 230,
             fit: Boxfit.cover,
             fadeInDuration: Duration( milliseconds: 300),
           ),
-
-          container(
+          if(name != null) {
+            container(
             alignment: AlignmentDirectional.centerEnd,
             padding: EdgeInserts.only(right:20, top:10, button: 10),
-            child: Text('Un hermoso paisaje'),
+            child: Text(name ?? 'No tittle'),
           )
+          }
         ],
       )
     )
