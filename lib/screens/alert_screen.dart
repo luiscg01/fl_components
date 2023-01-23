@@ -4,8 +4,38 @@ import 'package:flutter/material.dart';
 class AlertScreen extends StatelessWidget {
    
   const AlertScreen({Key? key}) : super(key: key);
+
+  void displayDialogIOS() {
+    showcupertinoDialogIOS() {
+      context:
+      builder: (context) {
+        barrierDismissible: false,
+        return CupertinoAlertDialog(
+          title: Text('titulo'),
+             content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text('Este es ek contenido de la alerta'),
+                SizeBox(height: 10),
+                FlutterLogo(size: 100)
+              ],
+            )
+             actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('Cancelar')
+              )
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('OK')
+              )
+            ],
+        );
+      }
+    };  
+  }
   
-  void displayDialog() {
+  void displayDialogAndroid() {
       showDialog(
         barrierDismissible: true,
         context: context,
@@ -27,6 +57,10 @@ class AlertScreen extends StatelessWidget {
                 onPressed: () => Navigator.pop(context),
                 child: const Text('Cancelar')
               )
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('OK')
+              )
             ],
           );
         }
@@ -44,7 +78,9 @@ class AlertScreen extends StatelessWidget {
               //elevation: 0
             //),
             child: const Text('Mostrar Alerta', style: TextStyle(fontSize: 20)),
-            onPressed:  displayDialog
+            onPressed: () => Platform.isAndroid
+            ? displayDialogAndroid (context)
+            : displayDialogIOS (context)
             
          )  
       ),
@@ -53,6 +89,5 @@ class AlertScreen extends StatelessWidget {
         onPressed: () => Navigator.pop(context)
 
       )
-    );
   }
 }
