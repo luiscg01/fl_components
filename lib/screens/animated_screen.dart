@@ -31,7 +31,9 @@ class AnimatedScreen extends State<AnimatedScreen> {
                 backgroundColor: Colors.red,
             ),
             body: Center (
-                child: Container(
+                child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 400),
+                    curve: Curves.bounceOut,
                     width: _width,
                     height: _height,
                     decoration: BoxDecoration(
