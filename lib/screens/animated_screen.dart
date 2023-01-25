@@ -45,7 +45,7 @@ class AnimatedScreen extends State<AnimatedScreen> {
             floatingActionButton: floatingActionButton(
                 child: const Icon(Icons.play_circle_outline, size: 35),
                 onPressed: () {
-
+                    
                 },
             ),
         );
