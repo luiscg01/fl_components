@@ -25,16 +25,30 @@ class inputScreen extends StatefullsWidget {
                         child: Column(
                             children: [
                             CustomInputField(labelText: 'Nombre', hintText: 'Nombre de Usuario', formProperty: 'first name', formValues: formValues)
-                            SizeBox(height: 30)
+                            SizeBox(height: 30),
 
                             CustomInputField(labelText: 'Apellido', hintText: 'Apellido de Usuario', formProperty: 'last name', formValues: formValues)
-                            SizeBox(height: 30)
+                            SizeBox(height: 30),
 
                             CustomInputField(labelText: 'Correo', hintText: 'Correo de Usuario', keyboardType: TextInputType.emailAddress, formProperty: 'email', formValues: formValues)
-                            SizeBox(height: 30)
+                            SizeBox(height: 30),
 
                             CustomInputField(labelText: 'Contraseña', hintText: 'Contraseña de Usuario', obscureText: true, formProperty: 'password', formValues: formValues)
-                            SizeBox(height: 30)
+                            SizeBox(height: 30),
+
+                            DropdownbuFormField(
+                                value: 'Admin',
+                                items: const [
+                                    DropdownMenuItem(value: 'Admin', child: Text('Admin')),
+                                    DropdownMenuItem(value: 'SuperUser', child: Text('SuperUser')),
+                                    DropdownMenuItem(value: 'Developer', child: Text('Developer')),
+                                    DropdownMenuItem(value: 'Jr. Dev', child: Text('Jr. Dev')),
+
+                                ],
+                                onChanged:(value) {
+                                    formValues['role'] = value ?? 'Admin';
+                                }
+                            ),
 
                             ElevatedBotton (
                                   child const SizeBox(
