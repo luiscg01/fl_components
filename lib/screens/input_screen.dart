@@ -24,16 +24,16 @@ class inputScreen extends StatefullsWidget {
                         key: myFormKey,
                         child: Column(
                             children: [
-                            CustomInputField(labelText: 'Nombre', hintText: 'Nombre de Usuario')
+                            CustomInputField(labelText: 'Nombre', hintText: 'Nombre de Usuario', formProperty: 'first name', formValues: formValues)
                             SizeBox(height: 30)
 
-                            CustomInputField(labelText: 'Apellido', hintText: 'Apellido de Usuario')
+                            CustomInputField(labelText: 'Apellido', hintText: 'Apellido de Usuario', formProperty: 'last name', formValues: formValues)
                             SizeBox(height: 30)
 
-                            CustomInputField(labelText: 'Correo', hintText: 'Correo de Usuario', keyboardType: TextInputType.emailAddress,)
+                            CustomInputField(labelText: 'Correo', hintText: 'Correo de Usuario', keyboardType: TextInputType.emailAddress, formProperty: 'email', formValues: formValues)
                             SizeBox(height: 30)
 
-                            CustomInputField(labelText: 'Contraseña', hintText: 'Contraseña de Usuario', obscureText: true)
+                            CustomInputField(labelText: 'Contraseña', hintText: 'Contraseña de Usuario', obscureText: true, formProperty: 'password', formValues: formValues)
                             SizeBox(height: 30)
 
                             ElevatedBotton (
