@@ -32,7 +32,7 @@ class inputScreen extends StatefullsWidget {
 
                             CustomInputField(labelText: 'Correo', hintText: 'Correo de Usuario', keyboardType: TextInputType.emailAddress, formProperty: 'email', formValues: formValues)
                             SizeBox(height: 30),
-
+                            
                             CustomInputField(labelText: 'Contraseña', hintText: 'Contraseña de Usuario', obscureText: true, formProperty: 'password', formValues: formValues)
                             SizeBox(height: 30),
 
