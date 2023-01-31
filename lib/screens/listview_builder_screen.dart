@@ -1,7 +1,19 @@
-class ListViewBuilder extends StatelessWidget {
+class ListViewBuilderScreen extends StatefullWidget {
    
-  const ListViewBuilder({Key? key}) : super(key: key);
+  const ListViewBuilderScreen({Key? key}) : super(key: key);
   
+class _ListViewBuilderScreenState extends State<ListViewBuilderScreen>{
+
+  final List <int> imagesIds = [1,2,3,4,5,6,7,8,9,10]
+  final ScrollControler scrollControler = new ScrollControler();
+
+  void initState() {
+    super.initState();
+    scrollControler.addListener((){
+        print('')
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
@@ -9,7 +21,9 @@ class ListViewBuilder extends StatelessWidget {
       removeTop: true,
       removeBottom: true,
       child: ListView.builder (
-        itemCount:10,
+        physics: const BouncingScrollPhysics(),
+        controller: scrollControler,
+        itemCount:imagesIds.length,
         itemBuilder: (BuildContext context, int index) {
          return FadeInImage(
             width: double.infinity,
@@ -23,4 +37,5 @@ class ListViewBuilder extends StatelessWidget {
      ),
     );
   }
+}
 }
