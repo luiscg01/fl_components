@@ -58,7 +58,7 @@ class inputScreen extends StatefullsWidget {
                                 onPressed() {
                                     FocusScope.of(context).requestFocus(FocusNode());
                                     if(!myFormKey.currentState.validate()) {
-
+                                        vlue: shfkenfdjeir
                                     }
                                 }
                             )
