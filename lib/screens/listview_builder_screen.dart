@@ -26,6 +26,13 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen>{
     add5();
     isLoading = false;
     setState(() {})
+
+    if(scrollControler.position.pixels + 100 <= scrollControler.position.maxScrollExent) return;
+    scrollControler.animatedTo(
+      offset,
+      duration: const Duration(milliseconds: 300),
+      curve:  Curves.fastOutSlownIn
+    )
   }
 
   @override
@@ -47,6 +54,14 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen>{
             );
         },
       ),
+
+      if(isLoading) {
+        Positioned(
+        bottom: 40,
+        left: size.width * 0.5 - 30,
+        child: const _LoadingIcon()
+       )
+      }
 
       Container(
         color: Colors.white,
